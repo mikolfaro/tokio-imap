@@ -355,6 +355,7 @@ pub enum AttributeValue<'a> {
     /// https://developers.google.com/gmail/imap/imap-extensions#access_to_gmail_labels_x-gm-labels
     GmailLabels(Vec<Cow<'a, str>>),
     GmailMsgId(u64),
+    GmailThrId(u64),
 }
 
 impl<'a> AttributeValue<'a> {
@@ -385,6 +386,7 @@ impl<'a> AttributeValue<'a> {
                 AttributeValue::GmailLabels(v.into_iter().map(to_owned_cow).collect())
             }
             AttributeValue::GmailMsgId(v) => AttributeValue::GmailMsgId(v),
+            AttributeValue::GmailThrId(v) => AttributeValue::GmailThrId(v),
         }
     }
 }

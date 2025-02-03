@@ -574,6 +574,7 @@ fn msg_att(i: &[u8]) -> IResult<&[u8], AttributeValue> {
         msg_att_uid,
         gmail::msg_att_gmail_labels,
         gmail::msg_att_gmail_msgid,
+        gmail::msg_att_gmail_thrid,
     ))(i)
 }
 
